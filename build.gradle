@@ -5,6 +5,8 @@ plugins {
 group 'com.curso.sarafuentes3025'
 version '1.0-SNAPSHOT'
 
+sourceCompatibility = 17
+
 repositories {
     mavenCentral()
 }
