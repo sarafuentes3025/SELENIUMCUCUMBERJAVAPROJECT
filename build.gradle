@@ -4,24 +4,21 @@ plugins {
 
 group 'com.curso.sarafuentes3025'
 version '1.0-SNAPSHOT'
-
-sourceCompatibility = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.0'
-
-    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
-    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.0.0'
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '4.2.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '4.2.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 
-test {
-    useJUnitPlatform()
-}
+
