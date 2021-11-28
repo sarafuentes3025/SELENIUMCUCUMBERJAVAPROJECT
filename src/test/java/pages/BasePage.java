@@ -44,40 +44,42 @@ public class BasePage {
     Find(locator).sendKeys(textToWrite);
   }
 
-  public void selectFromDropdownByValue(String locator, String valueToSelect){
+  public void selectFromDropdownByValue(String locator, String valueToSelect) {
     Select dropdown = new Select(Find(locator));
     dropdown.selectByValue(valueToSelect);
   }
 
-  public void selectFromDropdownByIndex(String locator, int valueToSelect){
+  public void selectFromDropdownByIndex(String locator, int valueToSelect) {
     Select dropdown = new Select(Find(locator));
     dropdown.selectByIndex(valueToSelect);
 
-  }public void selectFromDropdownByTex(String locator, String valueToSelect){
+  }
+
+  public void selectFromDropdownByTex(String locator, String valueToSelect) {
     Select dropdown = new Select(Find(locator));
     dropdown.selectByVisibleText(valueToSelect);
   }
 
-  public void hoverOverElement(String locator){
+  public void hoverOverElement(String locator) {
     action.moveToElement(Find(locator));
   }
 
-  public void doubleClick(String locator){
+  public void doubleClick(String locator) {
     action.doubleClick(Find(locator));
   }
 
-  public void rightClick(String locator){
+  public void rightClick(String locator) {
     action.contextClick(Find(locator));
   }
 
-  public String getValueFromTable(String locator, int row, int column){
-    String celINeed = locator+"/table/tbody/tr["+row+"]/td["+column+"]";
+  public String getValueFromTable(String locator, int row, int column) {
+    String celINeed = locator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
 
     return Find(celINeed).getText();
   }
 
-  public void setValueFromTable(String locator, int row, int column, String stringToSend){
-    String cellToFill = locator+"/table/tbody/tr["+row+"]/td["+column+"]";
+  public void setValueFromTable(String locator, int row, int column, String stringToSend) {
+    String cellToFill = locator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
 
     Find(cellToFill).sendKeys(stringToSend);
 
