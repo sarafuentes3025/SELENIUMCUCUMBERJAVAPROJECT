@@ -6,12 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
   protected static WebDriver driver;
-  protected static WebDriverWait wait;
+  private static WebDriverWait wait;
 
   static {
     ChromeOptions chromeOptions = new ChromeOptions();
@@ -39,5 +40,19 @@ public class BasePage {
   public void write(String locator, String textToWrite) {
     Find(locator).clear();
     Find(locator).sendKeys(textToWrite);
+  }
+
+  public void selectFromDropdownByValue(String locator, String valueToSelect){
+    Select dropdown = new Select(Find(locator));
+    dropdown.selectByValue(valueToSelect);
+  }
+
+  public void selectFromDropdownByIndex(String locator, int valueToSelect){
+    Select dropdown = new Select(Find(locator));
+    dropdown.selectByIndex(valueToSelect);
+
+  }public void selectFromDropdownByTex(String locator, String valueToSelect){
+    Select dropdown = new Select(Find(locator));
+    dropdown.selectByVisibleText(valueToSelect);
   }
 }
