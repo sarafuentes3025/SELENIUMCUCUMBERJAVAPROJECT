@@ -84,4 +84,16 @@ public class BasePage {
     Find(cellToFill).sendKeys(stringToSend);
 
   }
+
+  public void switchToiFrame(int iFrameIndex) {
+    driver.switchTo().frame(iFrameIndex);
+  }
+
+  public void switchToParentFrame(int iFrameIndex) {
+    driver.switchTo().frame(iFrameIndex);
+  }
+
+  public void dismissAlert() {
+    driver.switchTo().alert().dismiss();
+  }
 }
