@@ -2,6 +2,7 @@ package steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.junit.Assert;
 import pages.GridPage;
 
 public class GridTestSteps {
@@ -17,6 +18,13 @@ public class GridTestSteps {
   public void returnValue() {
     String value = grid.getValueFromGrid(3, 2);
 
-    System.out.println(value);
+    Assert.assertEquals("r: 2, c: 1", value);
   }
+
+  @Then("^I can validate the value is displayed$")
+  public void theTableIsThere() {
+    Assert.assertFalse("El elemento está siendo mostrado.", grid.cellStatus());
+  }
+
+
 }

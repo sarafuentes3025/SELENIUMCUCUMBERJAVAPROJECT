@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class BasePage {
 
   protected static WebDriver driver;
@@ -97,15 +99,15 @@ public class BasePage {
     driver.switchTo().alert().dismiss();
   }
 
-  public String textFromElement(String locator){
+  public String textFromElement(String locator) {
     return Find(locator).getText();
   }
 
-  public boolean elementIsDisplayed(String locator){
+  public boolean elementIsDisplayed(String locator) {
     return Find(locator).isDisplayed();
   }
 
-  public boolean elementIsSelected(String locator){
+  public boolean elementIsSelected(String locator) {
     return Find(locator).isSelected();
   }
 }
