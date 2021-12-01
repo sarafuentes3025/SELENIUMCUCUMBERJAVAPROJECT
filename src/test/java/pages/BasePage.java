@@ -110,4 +110,8 @@ public class BasePage {
   public boolean elementIsSelected(String locator) {
     return Find(locator).isSelected();
   }
+
+  public List<WebElement> bringMeAllElements(String locator) {
+    return driver.findElements(By.className((locator)));
+  }
 }
