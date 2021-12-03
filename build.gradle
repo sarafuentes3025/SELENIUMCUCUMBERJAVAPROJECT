@@ -21,4 +21,8 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
 
+test {
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
+
 
