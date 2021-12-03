@@ -14,7 +14,6 @@ Feature: Test different action on a sandbox page.
     Given I navigate to the static table
     Then I can validate the value is displayed
 
-  @Test
   Scenario: As a Test Engineer, I want to validate that a text is present inside the list.
     Given I navigate to the list page
     When I search the list
