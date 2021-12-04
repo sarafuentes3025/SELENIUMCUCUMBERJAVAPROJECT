@@ -11,7 +11,8 @@ import pages.BasePage;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = "steps",
-    tags = {"@Grid"}
+    monochrome = true,
+    tags = {"@List"}
 )
 
 public class runner {
