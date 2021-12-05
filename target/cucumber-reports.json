@@ -1,0 +1,139 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 10,
+        "name": "Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.",
+        "description": "",
+        "id": "i-can-find-a-city-inside-a-state.;scenario-outline-name:-as-a-test-engineer--i-want-to-validate-that-a-text-is-present-inside-the-list.;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3517717387,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I navigate to the list page",
+            "match": {
+              "location": "ListSteps.navigateToListPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1018848602,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I search Washington the list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Washington",
+                  "offset": 9
+                }
+              ],
+              "location": "ListSteps.searchTheList(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 438291607,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I can find Seattle, Washington in the list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Seattle, Washington",
+                  "offset": 11
+                }
+              ],
+              "location": "ListSteps.theTableIsThere(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@List"
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.",
+        "description": "",
+        "id": "i-can-find-a-city-inside-a-state.;scenario-outline-name:-as-a-test-engineer--i-want-to-validate-that-a-text-is-present-inside-the-list.;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 74890186,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I navigate to the list page",
+            "match": {
+              "location": "ListSteps.navigateToListPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 928386207,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I search Chicago the list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Chicago",
+                  "offset": 9
+                }
+              ],
+              "location": "ListSteps.searchTheList(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 24386622,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I can find Chicago, Illinois in the list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Chicago, Illinois",
+                  "offset": 11
+                }
+              ],
+              "location": "ListSteps.theTableIsThere(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@List"
+          }
+        ]
+      }
+    ],
+    "name": "I can find a city inside a state.",
+    "description": "",
+    "id": "i-can-find-a-city-inside-a-state.",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/ListPageTests.feature",
+    "tags": []
+  }
+]
