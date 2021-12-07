@@ -34,6 +34,10 @@ public class BasePage {
     driver.get(url);
   }
 
+  public void goToLinkText(String linkText) {
+    driver.findElement(By.linkText(linkText)).click();
+  }
+
   public static void closeBrowser() {
     driver.quit();
   }
@@ -122,5 +126,10 @@ public class BasePage {
 
   public List<WebElement> bringMeAllElements(String locator) {
     return driver.findElements(By.className((locator)));
+  }
+
+  public void selectNthElement(String locator, int index) {
+    List<WebElement> results = driver.findElements(By.xpath(locator));
+    results.get(index).click();
   }
 }

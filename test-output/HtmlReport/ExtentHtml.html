@@ -46,7 +46,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Dec 5, 2021 11:30:49 AM</span>
+			<span class='label blue darken-3 suite-start-time'>Dec 6, 2021 10:35:48 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -74,7 +74,8 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@List</a></li>
+					<li><a href='#'>@Amazon</a></li>
+					<li><a href='#'>@Cart</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -143,10 +144,10 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='87.5%'><span class='strong'>7</span> step(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='91.667%'><span class='strong'>11</span> step(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='12.5%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='8.333%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -166,8 +167,8 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>I can find a city inside a state.</span>
-						<span class='test-time'>Dec 5, 2021 11:30:49 AM</span>
+						<span class='test-name'>Test Amazon search functionality</span>
+						<span class='test-time'>Dec 6, 2021 10:35:48 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
@@ -179,54 +180,164 @@
 </div>
 <div class='scenariooutline node' test-id='2' status='fail'>
     <div class='category-list'>
-        <span class='category label'>@List</span>
+        <span class='category label'>@Cart</span>
     </div>
-    <span class='duration right label'>0h 0m 5s+772ms</span>
+    <span class='duration right label'>0h 0m 46s+687ms</span>
     <div class="bdd-test">
-        <div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> ScenarioOutline: Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</div>
-        <table class='runtime-table table-striped table'><tr><td>state</td><td>city</td></tr><tr><td>Washington</td><td>Seattle, Washington</td></tr><tr><td>Chicago</td><td>Chicago, Illinoisss</td></tr></table>
+        <div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> ScenarioOutline: As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</div>
+        <table class='runtime-table table-striped table'><tr><td>Product</td></tr><tr><td>Alexa</td></tr><tr><td>Playstation</td></tr></table>
     </div>
     <ul class='steps'>
         <li test-id='3' class='node scenario pass' status='pass'>
-            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</div>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</div>
             <ul class='gc steps'>
                     <li test-id='4' class='gc given pass' status='pass'>
-                        <h6 class="step-name" title="ListSteps.navigateToListPage()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I navigate to the list page</h6>
+                        <h6 class="step-name" title="AmazonSearchSteps.navigateToAmazon()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given the user navigates to www.amazon.com</h6>
                             <div class="node-step"></div>
                     </li>
-                    <li test-id='5' class='gc when pass' status='pass'>
-                        <h6 class="step-name" title="ListSteps.searchTheList(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I search Washington the list</h6>
+                    <li test-id='5' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.enterSearchCriteria(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And searches for Alexa</h6>
                             <div class="node-step"></div>
                     </li>
-                    <li test-id='6' class='gc then pass' status='pass'>
-                        <h6 class="step-name" title="ListSteps.theTableIsThere(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I can find Seattle, Washington in the list</h6>
+                    <li test-id='6' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.navigateToSecondPAge(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And navigates to the page number 3</h6>
                             <div class="node-step"></div>
                     </li>
-                    <li test-id='7' class='gc asterisk pass' status='pass'>
+                    <li test-id='7' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.selectsThirdItem()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And selects the third item</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='8' class='gc then pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.itemCanBeAddedToTheCart()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then the user is able to add it to the cart</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='9' class='gc asterisk pass' status='pass'>
                         <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Hooks.tearDown(Scenario)</h6>
                             <div class="node-step"></div>
                     </li>
             </ul>
         </li>
-        <li test-id='8' class='node scenario fail' status='fail'>
-            <div class="step-name" title=""><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</div>
+        <li test-id='10' class='node scenario fail' status='fail'>
+            <div class="step-name" title=""><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</div>
             <ul class='gc steps'>
-                    <li test-id='9' class='gc given pass' status='pass'>
-                        <h6 class="step-name" title="ListSteps.navigateToListPage()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I navigate to the list page</h6>
+                    <li test-id='11' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.navigateToAmazon()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given the user navigates to www.amazon.com</h6>
                             <div class="node-step"></div>
                     </li>
-                    <li test-id='10' class='gc when pass' status='pass'>
-                        <h6 class="step-name" title="ListSteps.searchTheList(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I search Chicago the list</h6>
+                    <li test-id='12' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.enterSearchCriteria(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And searches for Playstation</h6>
                             <div class="node-step"></div>
                     </li>
-                    <li test-id='11' class='gc then fail' status='fail'>
-                        <h6 class="step-name" title="ListSteps.theTableIsThere(String)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then I can find Chicago, Illinoisss in the list</h6>
-                            <textarea disabled class="code-block">java.lang.Error: The text is not on the list: FAILED!
-	at steps.ListSteps.theTableIsThere(ListSteps.java:31)
-	at ✽.I can find Chicago, Illinoisss in the list(src/test/resources/features/ListPageTests.feature:7)
+                    <li test-id='13' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.navigateToSecondPAge(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And navigates to the page number 3</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='14' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="AmazonSearchSteps.selectsThirdItem()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And selects the third item</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='15' class='gc then fail' status='fail'>
+                        <h6 class="step-name" title="AmazonSearchSteps.itemCanBeAddedToTheCart()"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then the user is able to add it to the cart</h6>
+                            <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@id='add-to-cart-button'] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at pages.BasePage.Find(BasePage.java:46)
+	at pages.BasePage.clickElement(BasePage.java:50)
+	at pages.AmazonSearchPage.addToCart(AmazonSearchPage.java:38)
+	at steps.AmazonSearchSteps.itemCanBeAddedToTheCart(AmazonSearchSteps.java:36)
+	at ✽.the user is able to add it to the cart(src/test/resources/features/AmazonSearch.feature:10)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='add-to-cart-button']"}
+  (Session info: chrome=96.0.4664.55)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Saras-MacBook-Pro.local', ip: 'fe80:0:0:0:182c:3b06:5fa6:7a37%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.0.1', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.55, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: /var/folders/8r/t0tn014j33d...}, goog:chromeOptions: {debuggerAddress: localhost:64579}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 064dffceea7d8728e3a458c25c22c642
+*** Element info: {Using=xpath, value=//input[@id='add-to-cart-button']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at pages.BasePage.Find(BasePage.java:46)
+	at pages.BasePage.clickElement(BasePage.java:50)
+	at pages.AmazonSearchPage.addToCart(AmazonSearchPage.java:38)
+	at steps.AmazonSearchSteps.itemCanBeAddedToTheCart(AmazonSearchSteps.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
+	at cucumber.runner.TestStep.run(TestStep.java:49)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:44)
+	at cucumber.runner.Runner.runPickle(Runner.java:40)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:124)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:133)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </textarea>
                                                 </li>
-                    <li test-id='12' class='gc asterisk pass' status='pass'>
+                    <li test-id='16' class='gc asterisk pass' status='pass'>
                         <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Hooks.tearDown(Scenario)</h6>
                             <div class="node-step">Scenario fallando, referirse a la imagen adjunta.</div>
                             <div class="node-step"></div>
@@ -277,7 +388,7 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@List</span>
+						<span class='category-name'>@Amazon</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
 						<span class='label fail'>2</span>
@@ -300,18 +411,62 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 5, 2021 11:30:49 AM</td>
-										<td class='linked' test-id='2'>I can find a city inside a state..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</td>
+										<td>Dec 6, 2021 10:35:48 PM</td>
+										<td class='linked' test-id='1'>Test Amazon search functionality</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Dec 5, 2021 11:30:49 AM</td>
-										<td class='linked' test-id='3'>I can find a city inside a state..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</td>
+										<td>Dec 6, 2021 10:35:48 PM</td>
+										<td class='linked' test-id='3'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Dec 5, 2021 11:30:54 AM</td>
-										<td class='linked' test-id='8'>I can find a city inside a state..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list.</td>
+										<td>Dec 6, 2021 10:36:14 PM</td>
+										<td class='linked' test-id='10'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Cart</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						<span class='label fail'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 2</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 6, 2021 10:35:48 PM</td>
+										<td class='linked' test-id='2'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Dec 6, 2021 10:35:48 PM</td>
+										<td class='linked' test-id='3'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 6, 2021 10:36:14 PM</td>
+										<td class='linked' test-id='10'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart.</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -348,7 +503,7 @@
 			<ul id='exception-collection' class='exception-collection'>
 				<li class='exception displayed active'>
 					<div class='exception-heading'>
-						<span class='exception-name'>java.lang.Error</span>
+						<span class='exception-name'>org.openqa.selenium.TimeoutException</span>
 						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
 					</div>
 					<div class='exception-content hide'>
@@ -363,12 +518,106 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 5, 2021 11:30:55 AM</td>
-										<td class='linked' test-id='11'>I can find a city inside a state..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list..Scenario Outline name: As a Test Engineer, I want to validate that a text is present inside the list..Then I can find Chicago, Illinoisss in the list</td>
+										<td>Dec 6, 2021 10:36:24 PM</td>
+										<td class='linked' test-id='15'>Test Amazon search functionality.As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..As a Customer when I search for <Product>, I want to see if the third option on the second page is available for purchase and can be added to the cart..Then the user is able to add it to the cart</td>
 										<td>
-											<textarea disabled class="code-block">java.lang.Error: The text is not on the list: FAILED!
-	at steps.ListSteps.theTableIsThere(ListSteps.java:31)
-	at ✽.I can find Chicago, Illinoisss in the list(src/test/resources/features/ListPageTests.feature:7)
+											<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@id='add-to-cart-button'] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at pages.BasePage.Find(BasePage.java:46)
+	at pages.BasePage.clickElement(BasePage.java:50)
+	at pages.AmazonSearchPage.addToCart(AmazonSearchPage.java:38)
+	at steps.AmazonSearchSteps.itemCanBeAddedToTheCart(AmazonSearchSteps.java:36)
+	at ✽.the user is able to add it to the cart(src/test/resources/features/AmazonSearch.feature:10)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='add-to-cart-button']"}
+  (Session info: chrome=96.0.4664.55)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Saras-MacBook-Pro.local', ip: 'fe80:0:0:0:182c:3b06:5fa6:7a37%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.0.1', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.55, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: /var/folders/8r/t0tn014j33d...}, goog:chromeOptions: {debuggerAddress: localhost:64579}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 064dffceea7d8728e3a458c25c22c642
+*** Element info: {Using=xpath, value=//input[@id='add-to-cart-button']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at pages.BasePage.Find(BasePage.java:46)
+	at pages.BasePage.clickElement(BasePage.java:50)
+	at pages.AmazonSearchPage.addToCart(AmazonSearchPage.java:38)
+	at steps.AmazonSearchSteps.itemCanBeAddedToTheCart(AmazonSearchSteps.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
+	at cucumber.runner.TestStep.run(TestStep.java:49)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:44)
+	at cucumber.runner.Runner.runPickle(Runner.java:40)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:124)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:133)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </textarea>
 										</td>
 									</tr>
@@ -406,25 +655,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>12</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 5, 2021 11:30:49 AM</div>
+					<div class='panel-lead'>Dec 6, 2021 10:35:48 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 5, 2021 11:30:55 AM</div>
+			 		<div class='panel-lead'>Dec 6, 2021 10:36:35 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 6s+3ms</div>
+					<div class='panel-lead'>0h 0m 47s+394ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -440,7 +689,16 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@List</td>
+							<td>@Amazon</td>
+							<td>1</td>
+							<td>2</td>
+							<td>0</td>
+							<td>
+									33.333%
+							</td>
+						</tr>
+						<tr>
+							<td>@Cart</td>
 							<td>1</td>
 							<td>2</td>
 							<td>0</td>
@@ -477,8 +735,8 @@
 				infoChild: 0,
 				debugChild: 0,
 				exceptionsChild: 1,
-				grandChildCount: 8,
-				passGrandChild: 7,
+				grandChildCount: 12,
+				passGrandChild: 11,
 				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -491,7 +749,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "I can find a city inside a state.":5.772
+			        "Test Amazon search functionality":46.687
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
