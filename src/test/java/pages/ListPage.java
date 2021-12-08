@@ -8,8 +8,8 @@ import java.util.List;
 
 public class ListPage extends BasePage {
 
-  private String searchField = "//body/form[1]/input[1]";
-  private String searchResults = "name";
+  private final String searchField = "//body/form[1]/input[1]";
+  private final String searchResults = "name";
 
   public ListPage() {
     super(driver);
@@ -31,7 +31,7 @@ public class ListPage extends BasePage {
 
   public List<String> getAllSearchResults() {
     List<WebElement> list = bringMeAllElements(searchResults);
-    List<String> stringsFromList = new ArrayList<String>();
+    List<String> stringsFromList = new ArrayList<>();
     for (WebElement e : list) {
       stringsFromList.add(e.getText());
     }

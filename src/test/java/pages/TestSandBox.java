@@ -2,7 +2,7 @@ package pages;
 
 public class TestSandBox extends BasePage {
 
-  private String categoryDropdown = "//select[@id='animals']";
+  private final String categoryDropdown = "//select[@id='animals']";
 
   public TestSandBox() {
     super(driver);
